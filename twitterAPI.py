@@ -39,14 +39,15 @@ def getNumPosts(company, d1, d2):
     return ret
 
 
-#FOOD 
-print "WENDY'S"
-print (getNumPosts("wendys", 2, 30))
-print ""
-print "DUNKIN DONUTS"
-print (getNumPosts("dunkindonuts", 2, 30))
-print ""
+#FOOD
 
+print ("WENDY'S")
+print (getNumPosts("wendys", 2, 30))
+print ("")
+print ("DUNKIN DONUTS")
+print (getNumPosts("dunkindonuts", 2, 30))
+print ("")
+"""
 #ENTERTAINMENT
 print "VIACOM"
 print (getNumPosts("viacom", 2, 30))
@@ -67,7 +68,7 @@ def getSpecificPost(n):
     return oauth_req("https://api.twitter.com/1.1/statuses/show.json?&id=" + str(n), '785911658191265792-KGoZG2wcH2WX6avscCMs1eecqXOeLKu', "vOhGGZO9eWJIwBmkOeVjyco4ylb0bYIYuyRhrx9adzkAp")
     
 #print getSpecificPost(1107719029043671043)
-    
+    """
 # =================================
 """
 auth = tweepy.OAuthHandler('Ui7pqiei3Tpe1UpBp1gZFISVW', 'P8A94JTzEtyo1cGigJhWHZXZ4Cj2hZYvemtmVT6CgovknJjQeL')
