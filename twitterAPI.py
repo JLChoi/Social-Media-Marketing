@@ -39,15 +39,14 @@ def getNumPosts(company, d1, d2):
     return ret
 
 
-#FOOD
-
-print ("WENDY'S")
+#FOOD 
+print "WENDY'S"
 print (getNumPosts("wendys", 2, 30))
-print ("")
-print ("DUNKIN DONUTS")
+print ""
+print "DUNKIN DONUTS"
 print (getNumPosts("dunkindonuts", 2, 30))
-print ("")
-"""
+print ""
+
 #ENTERTAINMENT
 print "VIACOM"
 print (getNumPosts("viacom", 2, 30))
@@ -64,11 +63,33 @@ print "NIKE"
 print (getNumPosts("nike", 2, 30))
 print ""
 
+"""
+RESULTS 
+
+WENDY'S
+[97, 44, 171, 42, 64, 51, 112, 68, 68, 135, 122, 45, 41, 111, 57, 55, 78, 76, 26, 28, 78, 34, 108, 72, 26, 19, 46, 42, 93]
+
+DUNKIN DONUTS
+[23, 19, 20, 24, 1, 4, 35, 19, 33, 17, 26, 0, 4, 34, 15, 48, 16, 24, 4, 2, 19, 20, 24, 43, 31, 13, 8, 21, 31]
+
+VIACOM
+[3, 7, 9, 6, 0, 0, 2, 2, 0, 6, 1, 0, 0, 1, 0, 3, 0, 2, 0, 0, 1, 7, 1, 0, 1, 0, 0, 48, 9]
+
+DISNEY
+[4, 2, 2, 4, 0, 1, 2, 1, 3, 34, 4, 4, 3, 3, 5, 6, 5, 12, 3, 0, 5, 4, 5, 6, 5, 3, 2, 6, 2]
+
+ADIDAS
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]
+
+NIKE
+[5, 1, 2, 16, 0, 0, 2, 12, 6, 7, 3, 5, 6, 7, 4, 12, 6, 0, 6, 1, 3, 5, 5, 7, 6, 4, 2, 4, 3]
+"""
+
 def getSpecificPost(n):
     return oauth_req("https://api.twitter.com/1.1/statuses/show.json?&id=" + str(n), '785911658191265792-KGoZG2wcH2WX6avscCMs1eecqXOeLKu', "vOhGGZO9eWJIwBmkOeVjyco4ylb0bYIYuyRhrx9adzkAp")
     
 #print getSpecificPost(1107719029043671043)
-    """
+    
 # =================================
 """
 auth = tweepy.OAuthHandler('Ui7pqiei3Tpe1UpBp1gZFISVW', 'P8A94JTzEtyo1cGigJhWHZXZ4Cj2hZYvemtmVT6CgovknJjQeL')
