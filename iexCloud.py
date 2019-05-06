@@ -123,7 +123,7 @@ def get_price(company, date1, date2):
 
 print("Adidas from 4.2.2019 - 4.13.2019", get_price("addyy", "20190402", "20190413"))
 print("Nike from 4.2.2019 - 4.13.2019", get_price("nke", "20190402", "20190413"))
-print("Starbucks from 4.2.2019 - 4.13.2019", get_price("sbux", "20190402", "20190413"))
 print("Dunkin Donuts from 4.2.2019 - 4.13.2019", get_price("dnkn", "20190402", "20190413"))
+print("Wendy's from 4.2.2019 - 4.13.2019", get_price("wen", "20190402", "20190413"))
 print("Disney from 4.2.2019 - 4.13.2019", get_price("dis", "20190402", "20190413"))
 print("Viacom from 4.2.2019 - 4.13.2019", get_price("viab", "20190402", "20190413"))
