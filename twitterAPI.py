@@ -40,6 +40,7 @@ def getNumPosts(company, d1, d2):
 
 
 #FOOD 
+'''
 print "WENDY'S"
 print (getNumPosts("wendys", 2, 30))
 print ""
@@ -62,9 +63,27 @@ print ""
 print "NIKE"
 print (getNumPosts("nike", 2, 30))
 print ""
+'''
+def getPostsByDay(company, start, end):
+    if company == "WENDY'S":
+        return [97, 44, 171, 42, 64, 51, 112, 68, 68, 135, 122, 45, 41, 111, 57, 55, 78, 76, 26, 28, 78, 34, 108, 72, 26, 19, 46, 42, 93][start : end]
+    elif company == "DUNKIN DONUTS":
+        return [23, 19, 20, 24, 1, 4, 35, 19, 33, 17, 26, 0, 4, 34, 15, 48, 16, 24, 4, 2, 19, 20, 24, 43, 31, 13, 8, 21, 31][start : end + 1]
+    elif company == "VIACOM":
+        return [3, 7, 9, 6, 0, 0, 2, 2, 0, 6, 1, 0, 0, 1, 0, 3, 0, 2, 0, 0, 1, 7, 1, 0, 1, 0, 0, 48, 9][start : end + 1]
+    elif company == "DISNEY":
+        return [4, 2, 2, 4, 0, 1, 2, 1, 3, 34, 4, 4, 3, 3, 5, 6, 5, 12, 3, 0, 5, 4, 5, 6, 5, 3, 2, 6, 2][start : end + 1]
+    elif company == "ADIDAS":
+        return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0][start : end + 1]
+    elif company == "NIKE":
+        return [5, 1, 2, 16, 0, 0, 2, 12, 6, 7, 3, 5, 6, 7, 4, 12, 6, 0, 6, 1, 3, 5, 5, 7, 6, 4, 2, 4, 3][start : end + 1]
+    else:
+        print("Invalid Company Input")
+        return
 
 """
 RESULTS 
+
 
 WENDY'S
 [97, 44, 171, 42, 64, 51, 112, 68, 68, 135, 122, 45, 41, 111, 57, 55, 78, 76, 26, 28, 78, 34, 108, 72, 26, 19, 46, 42, 93]

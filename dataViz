@@ -1,29 +1,36 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from iexCloud import get_price
+from twitterAPI import getPostsByDay
+
+print("Company Choices: \nWENDY'S \nDUNKIN DONUTS \nVIACOM \nDISNEY \nADIDAS \nNIKE")
+comp  = input("Enter company as it appears above: ")
+date1 = input("Enter start date from 20190402 - 20190430 (YYYYMMDD): ")
+date2 = input("Enter end date from 20190402 - 20190430(YYYYMMDD): ")
+
+compDictionary = {"NIKE": "nke", "ADIDAS": "addyy", "WENDY'S": "wen", 
+"DUNKIN DONUTS": "dnkn", "DISNEY": "dis", "VIACOM": "viab"}
 
 
-comp  = input("Enter company: ")
-date1 = input("Enter start date: ")
-date2 = input("Enter end date: ")
 # Create some mock data
 
-t = [1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-data1 = get_price(comp, date1, date2)
-data2 = [80, 81,82, 83, 84, 85, 86, 87, 88, 89, 90, 91]
+t = range(1, int(date2) - int(date1) + 2)
+data1 = get_price(compDictionary[comp], date1, date2)
+data2 = getPostsByDay(comp, 0, 11) #date end - 2
+#[80, 81,82, 83, 84, 85, 86, 87, 88, 89, 90, 91]
 
 fig, ax1 = plt.subplots()
 
 color = 'tab:red'
-ax1.set_xlabel('time (s)')
-ax1.set_ylabel('exp', color=color)
+ax1.set_xlabel('Days')
+ax1.set_ylabel('Share Price ($)', color=color)
 ax1.plot(t, data1, color=color)
 ax1.tick_params(axis='y', labelcolor=color)
 
 ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
 color = 'tab:blue'
-ax2.set_ylabel('sin', color=color)  # we already handled the x-label with ax1
+ax2.set_ylabel('Account Activity', color=color)  # we already handled the x-label with ax1
 ax2.plot(t, data2, color=color)
 ax2.tick_params(axis='y', labelcolor=color)
 
