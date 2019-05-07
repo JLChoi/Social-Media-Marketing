@@ -50,7 +50,13 @@ def get_price(company, date1, date2):
                                 if len(data) != 0:
                                     close_prices.append(data[0]['close'])
                                 else:
-                                    close_prices.append(close_prices[len(close_prices) - 1])
+                                    if (end_day - 2) < 10:
+                                        date = date2[0:6] + "0" + str(end_day - 2)
+                                    else:
+                                        date = date2[0:6] + str(end_day - 2)
+                                    url = url_head + date + url_tail
+                                    data = json.load(urlopen(url))
+                                    close_prices.append(data[0]['close'])
                                 return close_prices
                             else:
                                 if start_month < 10:
@@ -68,7 +74,14 @@ def get_price(company, date1, date2):
                                 if len(data) != 0:
                                     close_prices.append(data[0]['close'])
                                 else:
-                                    close_prices.append(close_prices[len(close_prices) - 1])
+                                    filler_day = int(date[6:8])
+                                    if (filler_day - 2) < 10:
+                                        date = date[0:6] + "0" + str(filler_day - 2)
+                                    else:
+                                        date = date[0:6] + str(filler_day - 2);
+                                    url = url_head + date + url_tail
+                                    data = json.load(urlopen(url))
+                                    close_prices.append(data[0]['close'])
                                 start_day += 1
                     else:
                         if start_month == (1 or 3 or 5 or 7 or 8 or 10 or 12):
@@ -94,7 +107,14 @@ def get_price(company, date1, date2):
                             if len(data) != 0:
                                 close_prices.append(data[0]['close'])
                             else:
-                                close_prices.append(close_prices[len(close_prices) - 1])
+                                filler_day = int(date[6:8])
+                                if (filler_day - 2) < 10:
+                                    date = date[0:6] + "0" + str(filler_day - 2)
+                                else:
+                                    date = date[0:6] + str(filler_day - 2);
+                                url = url_head + date + url_tail
+                                data = json.load(urlopen(url))
+                                close_prices.append(data[0]['close'])
                             start_day += 1
                         start_day = 1
                         start_month += 1
@@ -108,10 +128,29 @@ def get_price(company, date1, date2):
                         upper_bound = 30
 
                     while start_day <= upper_bound:
-                        url = url_head + str(start_year) + str(start_month) + str(start_day) + url_tail
-                        data = json.load(urlopen(url))
-                        if len(data) != 0:
-                            close_prices.append(data[0]['close'])
+                        if start_month < 10:
+                            if start_day < 10:
+                                date = str(start_year) + "0" + str(start_month) + "0" + str(start_day)
+                            else:
+                                date = str(start_year) + "0" + str(start_month) + str(start_day)
+                        else:
+                            if start_day < 10:
+                                date = str(start_year) + str(start_month) + "0" + str(start_day)
+                            else:
+                                date = str(start_year) + str(start_month) + str(start_day)
+                            url = url_head + date + url_tail
+                            data = json.load(urlopen(url))
+                            if len(data) != 0:
+                                close_prices.append(data[0]['close'])
+                            else:
+                                filler_day = int(date[6:8])
+                                if (filler_day - 2) < 10:
+                                    date = date[0:6] + "0" + str(filler_day - 2)
+                                else:
+                                    date = date[0:6] + str(filler_day - 2);
+                                url = url_head + date + url_tail
+                                data = json.load(urlopen(url))
+                                close_prices.append(data[0]['close'])
                         start_day += 1
                     start_day = 1
                     start_month += 1
@@ -121,10 +160,10 @@ def get_price(company, date1, date2):
         print("Invalid company or date")
 
 
-#print("Adidas from 4.2.2019 - 4.13.2019", get_price("addyy", "20190402", "20190413"))
-print("Nike from 4.2.2019 - 4.13.2019", get_price("nke", "20190404", "20190407"))
-'''print("Dunkin Donuts from 4.2.2019 - 4.13.2019", get_price("dnkn", "20190402", "20190413"))
-print("Wendy's from 4.2.2019 - 4.13.2019", get_price("wen", "20190402", "20190413"))
-print("Disney from 4.2.2019 - 4.13.2019", get_price("dis", "20190402", "20190413"))
-print("Viacom from 4.2.2019 - 4.13.2019", get_price("viab", "20190402", "20190413"))
+#print("Adidas", get_price("addyy", "20190402", "20190413"))
+print("Nike", get_price("nke", "20190407", "20190413"))
+'''print("Dunkin Donuts", get_price("dnkn", "20190402", "20190413"))
+print("Wendy's", get_price("wen", "20190402", "20190413"))
+print("Disney", get_price("dis", "20190402", "20190413"))
+print("Viacom", get_price("viab", "20190402", "20190413"))
 '''
