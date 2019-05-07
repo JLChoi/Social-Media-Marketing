@@ -5,12 +5,14 @@ For our analysis, please see Analysis.pdf.
 
 Setup (Python 3):
 Install the following packages
+
 	- numpy
 	- matplotlib
 	- oauth2
 	- tweepy
 
 Operation:
+
 	1. Run dataViz file
 	2. Type company name as appears in list
 	3. Type start date and end date such that start date is before end date
