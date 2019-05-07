@@ -1,5 +1,7 @@
 # Social-Media-Marketing
 
+Project for NETS-150 by Kunaal Chaudhari, Jonathan Choi, and Tiffany Moi
+
 The following provides background about the program files, setup, operation, and interpretation.
 For our analysis, please see Analysis.pdf.
 
