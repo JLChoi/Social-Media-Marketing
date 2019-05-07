@@ -1,11 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import statsmodels.tsa.stattools as stat
 from iexCloud import get_price
 from twitterAPI import getPostsByDay
 
 ax1 = plt.subplot(211)
 ax3 = plt.subplot(212)
-plt.subplots_adjust(0.125, 0.1, 0.9, 0.9, 0.2, 0.5)
+plt.subplots_adjust(0.1, 0.1, 0.9, 0.9, 0.2, 0.5)
 
 print("Company Choices: \nWENDY'S \nDUNKIN DONUTS \nVIACOM \nDISNEY \nADIDAS \nNIKE")
 comp  = input("Enter company as it appears above: ")
@@ -70,6 +71,16 @@ ax4.plot(t2, data4, color=color)
 ax4.tick_params(axis='y', labelcolor=color)
 
 #fig.tight_layout()  # otherwise the right y-label is slightly clipped
+arr = []
+for i in range(1, len(data3)):
+	arr.append((data3[i], data4[i]))
+
+
+
+try:
+	granger = stat.grangercausalitytests(arr, 5)	
+except:
+	pass
 
 plt.show()
 
