@@ -10,8 +10,8 @@ plt.subplots_adjust(0.1, 0.1, 0.9, 0.9, 0.2, 0.5)
 
 print("Company Choices: \nWENDY'S \nDUNKIN DONUTS \nVIACOM \nDISNEY \nADIDAS \nNIKE")
 comp  = input("Enter company as it appears above: ")
-date1 = input("Enter start date from 20190402 - 20190430 (YYYYMMDD): ")
-date2 = input("Enter end date from 20190402 - 20190430(YYYYMMDD): ")
+date1 = input("Enter start date from 20190402 - 20190420 (YYYYMMDD): ")
+date2 = input("Enter end date from 20190402 - 20190420(YYYYMMDD): ")
 
 compDictionary = {"NIKE": "nke", "ADIDAS": "addyy", "WENDY'S": "wen", 
 "DUNKIN DONUTS": "dnkn", "DISNEY": "dis", "VIACOM": "viab"}
