@@ -26,6 +26,7 @@ Operation:
 
 
 Resources:
+
 	- matplotlib documentation
 	- statsmodels documentation
 	- tweety API
