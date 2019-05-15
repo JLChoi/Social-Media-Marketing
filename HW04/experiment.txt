@@ -1,0 +1,49 @@
+Tiffany Moi
+tmoi
+
+HW04 - EXPERIMENT
+
+For my experiment, I chose two of my favorite authors, Agatha Christie and Leo Tolstoy and I tried to see which 
+author had the most similar writing in their books. 
+
+HYPOTHESIS: I think Agatha Christie's books would be more similar since they are centered around the same theme: murder 
+mysteries. I would assume that Christie would use similar language to describe parallel situations in her novels. On the
+other hand, Tolstoy's novels tell different stories with numerous different characters, so there would be less overlap
+between his works. 
+
+EXPERIMENT DESIGN: I first went on Project Gutenberg to find txt files of the two authors' novels. Christie only had
+3 novels listed under her name, "The Mysterious Affair at Styles," "The Murder on the Links," and "The Secret 
+Adversary," so I downloaded those files. For Leo Tolstoy, I dowloaded the top 3 most dowloaded novels, "War and Peace," 
+"Anna Karenina," and "Best Russian Short Stories." The reason why I chose the last work over any other is because
+the rest of the works were short commentaries, so the short stories would have fit better with the genre in my 
+experiment. 
+
+After collecting all of these txt files, I ran the vector space model on the texts. I first created a corpus with the 3
+Christie novels and another corpus with the 3 Tolstoy novels. Then, I ran the cosine similarity between each pair of 
+books in the corpus and I averaged the similarities to get the overall score for the similarity between works of the
+two authors. 
+
+RESULTS: My hypothesis was correct, as Christie had an average cosine similarity of 0.0376, whereas Tolstoy had an
+average similarity of 0.0069. The exact results are described below. Though Christie had a higher similarity, the 
+average similarity is still very low. It was only pulled up by the high similarity between "The Mysterious Affair at 
+Styles" and "The Murder on the Links". It might be possible that Tolstoy has more similarity in his writing, but 
+the similarity may have been decreased because his works are so large compared to Christie's. If I were to run this 
+experiment again, I would choose authors that have similar length writing. 
+
+mysterious-affair.txt comparing to murder-links.txt
+0.10892683579408391
+
+mysterious-affair.txt comparing to secret-adversary.txt
+0.002300309494633462
+
+murder-links.txt comparing to secret-adversary.txt
+0.001505576765236094
+
+anna-karenina.txt comparing to war-peace.txt
+0.012060652026860451
+
+anna-karenina.txt comparing to short-stories.txt
+0.00371480716446194
+
+war-peace.txt comparing to short-stories.txt
+0.004940657645574781

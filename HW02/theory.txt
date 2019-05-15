@@ -1,0 +1,86 @@
+Tiffany Moi
+tmoi
+HW02
+
+1. This statement is true. If there is a path from A to B, that would mean
+that in DFS, A and B will discovered in a sequence together since they
+are in the same connected component of G.
+
+If A is discovered first, B will be discovered sometime after it. However,
+this will also mean that B will be finished before A, so A will have a later
+finish time than B's and it will also be later than the start time of B.
+
+If B is discovered first, A will be discovered sometime after it. This
+would mean that A will be finished before B, but it will also definitely
+finish after B has started.
+
+2. A, B, C, D, E, F, G, H
+
+3. 
+
+   |  1  |  2  |  3  |  4  |  5
+---------------------------------
+ s |  0  |     |     |     |
+---------------------------------
+ t | Inf |  3  |     |     |
+---------------------------------
+ y | Inf |  5  |  5  |     |
+---------------------------------
+ x | Inf | Inf |  9  |  9  |
+---------------------------------
+ z | Inf | Inf | Inf |  11 |  11
+
+
+4. a.
+	-----	5    -----
+       |  A  | ---> |  C  |
+        -----  \     -----
+ 	  |	\      |
+	3 |  -10 \     |  4   
+	  |	  \    | 
+	 \ /	   \  \ /
+	-----	 3   -----
+       |  B  | <--- |  D  |
+        -----	     -----
+The edge between A and D is directed and goes from D to A with edge
+weight -10.
+
+Here, the shortest path from A to A will be from A to C to D then back to A,
+since it will be of length 5 + 4 - 10 = -1. However, Dijstra's Algorithm will
+say that it is from A to A with length 0.
+
+b.
+	-----	5    -----
+       |  A  | ---> |  C  |
+        -----  \     -----
+ 	  |	\      |
+	3 |   -8 \     |  4   
+	  |	  \    | 
+	 \ /	   \  \ /
+	-----	 3   -----
+       |  B  | <--- |  D  |
+        -----	     -----
+The edge between A and D is directed and goes from D to A with edge
+weight -8.
+
+Here, the shortest path from A to A will be from A to A, since it will be of
+length 0. Dijstra's Algorithm will also output the same.
+
+c. Dijkstra's algorithm will work correctly if it encounters the negative edge
+before terminating the path to a particular edge. The algorithm will stop for a
+specfic node once it sees that it has the minimum distance out of the unterminated
+nodes. It assumes that taking any other path that could possibly lead back to itself
+will only increase the path length. However, this might not be true when we have
+negative edge weights. 
+
+
+5. Satisfy STC:
+
+ Nodes | Strong | Strong | Weak/Strong
+---------------------------------------
+ A,B,C |   AB   |   BC   |     AC
+---------------------------------------
+ A,B,D |   AB   |   AD   |     BD
+---------------------------------------
+ A,D,E |   AD   |   DE   |     AE
+

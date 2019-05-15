@@ -1,0 +1,15 @@
+Tiffany Moi
+tmoi
+HW03
+
+1. A socket is an endpoint of a two way link between client and server. It recieves information
+and directs it to the correct port, which further brings it to the designated application. In
+addition, it sends information outward. The Socket object handles the client side and the
+ServerSocket handles the server side. The ServerSocket is more passive in the sense that it
+only handles listening. It will create another Socket object if it must respond.
+
+2. If the Socket constructor is initialized with a different port number, the socket will send
+information to the wrong port number for the server, which means that the server will get the
+information, but will direct it to the wrong application.
+
+3. 
